@@ -5,6 +5,7 @@ import { createWeb3Modal } from "@web3modal/wagmi/react";
 import { ReactNode } from "react";
 import { State, WagmiProvider } from "wagmi";
 import { projectId, wagmiConfig } from "./wagmiConfig";
+import { siweConfig } from "./siweConfig";
 
 // Setup queryClient
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ createWeb3Modal({
   projectId,
   enableAnalytics: true,
   enableOnramp: true, // Optional - true by default
+  siweConfig,
 });
 
 export default function AppWagmiProvider({ children, initialState }: { children: ReactNode; initialState?: State }) {
