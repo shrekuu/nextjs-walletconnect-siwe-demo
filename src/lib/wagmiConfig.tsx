@@ -26,6 +26,11 @@ export const wagmiConfig = defaultWagmiConfig({
   chains,
   projectId,
   metadata,
+  auth: {
+    email: false, // default to true
+    showWallets: true, // default to true
+    walletFeatures: true, // default to true
+  },
   ssr: true,
   storage: createStorage({
     storage: cookieStorage,
