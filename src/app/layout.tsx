@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import AppWagmiProvider from "@/lib/AppWagmiProvider";
 import { SessionProvider } from "next-auth/react";
+import NextAuthSessionProvider from "@/lib/NextAuthSessionProvider";
 import { getServerSession } from "next-auth";
 
 export const metadata: Metadata = {
@@ -19,9 +20,9 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
-        <SessionProvider session={session} basePath="/next-api/api/auth">
+        <NextAuthSessionProvider session={session}>
           <AppWagmiProvider>{children}</AppWagmiProvider>
-        </SessionProvider>
+        </NextAuthSessionProvider>
       </body>
     </html>
   );
