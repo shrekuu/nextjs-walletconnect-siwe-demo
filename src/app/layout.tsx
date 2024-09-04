@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import AppWagmiProvider from "@/lib/AppWagmiProvider";
-import { SessionProvider } from "next-auth/react";
 import NextAuthSessionProvider from "@/lib/NextAuthSessionProvider";
 import { getServerSession } from "next-auth";
 
@@ -18,7 +17,7 @@ export default async function RootLayout({
   const session = await getServerSession();
 
   return (
-    <html lang="en">
+    <html lang="en" className="font-sans">
       <body>
         <NextAuthSessionProvider session={session}>
           <AppWagmiProvider>{children}</AppWagmiProvider>
